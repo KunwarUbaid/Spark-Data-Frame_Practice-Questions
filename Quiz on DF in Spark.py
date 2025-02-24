@@ -47,7 +47,15 @@ df3.distinct().show()
 
 
 # COMMAND ----------
+#Ques-7 : Group the data based on gender = male and then further group the data based on course and the
+#gender and find total enrollements in each course and then return those courses where enrollment is more than 85.
 
+df.filter(col("gender") == "Male").groupBy("course","gender").agg(count("*").alias("Total_Enrollments")).filter(col("Total_Enrollments") > 85).show()
+
+#Alternate way
+#df5 = df.filter(df.gender == "Male").groupBy("course","gender").agg(count("*").alias("total_enroll"))
+#df5 = df5.filter(col("total_enroll") > 85)
+#df5.show()
 
 
 # COMMAND ----------
