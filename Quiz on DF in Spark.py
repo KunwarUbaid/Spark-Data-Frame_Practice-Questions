@@ -40,6 +40,10 @@ df.select("name","marks").show()
 
 # COMMAND ----------
 
+#Ques-6 : Display all the unique rows for age , gender and course columns
+
+df3 = df.select("age","gender","course")
+df3.distinct().show()
 
 
 # COMMAND ----------
